@@ -1,0 +1,143 @@
+:root {
+ --primary-1: rgb(112, 183, 250);
+ --clr-red-dark: hsl(360, 67%, 44%);
+}
+
+* {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ font-family: monospace;
+}
+
+ul {
+ list-style-type: none;
+}
+
+a {
+ text-decoration: none;
+}
+
+img {
+ display: block;
+}
+
+.sidebar-toggle {
+ position: fixed;
+ top: 2rem;
+ right: 3rem;
+ background: transparent;
+ border: none;
+ color: var(--primary-1);
+ font-size: 2rem;
+ transition: all 0.4s ease;
+ cursor: pointer;
+ animation: bounce 2s ease-in-out infinite;
+}
+
+.sidebar-toggle:hover {
+ transform: rotate(90deg);
+ color: black;
+}
+
+@keyframes bounce {
+ 0% {
+  transform: scale(1);
+ }
+ 50% {
+  transform: scale(1.5);
+ }
+ 100% {
+  transform: scale(1);
+ }
+}
+
+.sidebar-header {
+ display: flex;
+ justify-content: space-between;
+ padding: 1rem 1.5rem;
+ align-items: center;
+}
+
+.logo {
+ height: 40px;
+}
+
+.close-btn {
+ background: transparent;
+ border: none;
+ color: red;
+ cursor: pointer;
+ font-size: 2rem;
+ transition: all 0.5s ease;
+}
+
+.close-btn:hover {
+ transform: rotate(360deg);
+}
+.links {
+ 
+ margin-left: 12px;
+ margin-right: 12px;
+}
+.links a {
+ display: block;
+ padding: 1rem;
+ font-size: 2rem;
+ color: var(--primary-1);
+ transition: all 0.4s ease;
+ letter-spacing: 0.15rem;
+ border-radius: 0.5rem;
+}
+
+.links a:hover {
+ background: var(--primary-1);
+ color: black;
+ padding-left: 1.75rem;
+}
+
+.social-icons {
+ display: flex;
+ justify-self: center;
+ padding-bottom: 2rem;
+}
+
+.social-icons a {
+ color: var(--primary-1);
+ margin: 0 0.5rem;
+ font-size: 1.5rem;
+ transition: all 0.3s ease;
+}
+
+.social-icons a:hover {
+ color: rgb(50, 124, 235);
+}
+
+.fa-linkedin {
+ margin-right: -5vw;
+}
+
+.sidebar {
+ position: fixed;
+ top: 0;
+ left: 0;
+ height: 100%;
+ width: 100%;
+ background: white;
+ display: grid;
+ grid-template-rows: auto 1fr auto;
+ row-gap: 2rem;
+ box-shadow: var(--clr-red-dark);
+ transition: all 0.7s ease;
+ transform: translate(-100%);
+}
+
+.show-sidebar {
+ transform: translate(0);
+}
+
+@media screen and (min-width : 676px){
+ .sidebar {
+  width: 400px;
+ }
+}
