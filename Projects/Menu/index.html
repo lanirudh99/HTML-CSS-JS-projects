@@ -1,1 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Menu</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
 
+  <body>
+    <section class="menu">
+      <div class="title">
+        <h2>Our Menu</h2>
+        <div class="underline"></div>
+      </div>
+      <div class="button-container">
+        <button class="filter-btn" data-id="all">All</button>
+        <button class="filter-btn" data-id="breakfast">Breakfast</button>
+        <button class="filter-btn" data-id="lunch">Lunch</button>
+        <button class="filter-btn" data-id="shakes">Shakes</button>
+        <button class="filter-btn" id="dinner" data-id="dinner">Dinner</button>
+      </div>
+
+      <div class="section-center">
+        <article class="menu-item">
+          <img src="./menu-item.jpeg" alt="menu item" class="photo" />
+          <div class="item-info">
+            <header>
+              <h4>buttermilk pancakes</h4>
+              <h4 class="price">$15</h4>
+            </header>
+            <p class="item-text">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam
+              distinctio error, fugiat nesciunt pariatur ad quis vero?
+              Necessitatibus, doloribus ipsum!
+            </p>
+          </div>
+        </article>
+
+        <article class="menu-item">
+          <img src="./menu-item.jpeg" alt="menu item" class="photo" />
+          <div class="item-info">
+            <header>
+              <h4>buttermilk pancakes</h4>
+              <h4 class="price">$15</h4>
+            </header>
+            <p class="item-text">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod
+              labore soluta earum ullam aspernatur quidem blanditiis, maiores ab
+              est exercitationem?
+            </p>
+          </div>
+        </article>
+      </div>
+    </section>
+    <script src="app.js"></script>
+  </body>
+</html>
