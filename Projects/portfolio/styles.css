@@ -1,0 +1,358 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --ff-primary: "Source Sans Pro", sans-serif;
+  --ff-secondary: "Source Sans Pro", monospace;
+
+  --fw-reg: 300;
+  --fw-bold: 900;
+
+  --clr-light: #fff;
+  --clr-dark: #303030;
+  --clr-accent: #16e0bd;
+
+  --fs-h1: 3rem;
+  --fs-h2: 2.25rem;
+  --fs-h3: 1.25rem;
+  --fs-body: 1rem;
+
+  --bs-light: 0.25em 0.25em 0.75em rgba(0, 0, 0, 0.25),
+    0.125em 0.125em 0.25em rgba(0, 0, 0, 0.15);
+}
+
+@media (min-width: 800px) {
+  :root {
+    --fs-h1: 4.5rem;
+    --fs-h2: 3.75rem;
+    --fs-h3: 1.5rem;
+    --fs-body: 1.125rem;
+  }
+}
+
+/* general styles */
+
+body {
+  background: var(--clr-light);
+  color: var(--clr-dark);
+  margin: 0;
+  font-family: var(--ff-primary);
+  font-size: var(--fs-body);
+  line-height: 1.6;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+section {
+  padding: 5rem 2rem;
+}
+
+.btn {
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+  background-color: var(--clr-accent);
+  padding: 0.5em 2.5em;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--clr-dark);
+  transition: all 200ms ease;
+  border-radius: 0.5em;
+  font-weight: 600;
+  /* margin-top: 20px; */
+}
+
+.btn:hover {
+  transform: scale(1.1);
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1;
+  margin: 0;
+}
+
+h1 {
+  font-size: var(--fs-h1);
+}
+h2 {
+  font-size: var(--fs-h2);
+}
+h3 {
+  font-size: var(--fs-h3);
+}
+strong {
+  font-weight: var(--fw-bold);
+  animation: bounce 3.5s ease-in-out 1;
+  
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(-300px)
+  }
+  50% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1);
+  }
+  
+}
+.section-title {
+  margin-bottom: 0.25rem;
+}
+
+.section-title-intro {
+  font-weight: var(--fw-reg);
+}
+.section-title-intro strong {
+  display: block;
+}
+.section-subtitle {
+  margin: 0;
+  font-size: var(--fs-h3);
+}
+
+.section-subtitle-intro,
+.section-subtitle-about {
+  background: var(--clr-accent);
+  font-family: var(--ff-secondary);
+  font-weight: 600;
+  margin-bottom: 1em;
+  padding: 0.25em 1em;
+}
+
+/* header */
+
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: 1em;
+}
+
+.logo {
+  max-width: 100px;
+}
+
+/* intro section */
+nav {
+  display: none;
+}
+
+.intro {
+  position: relative;
+}
+
+.intro-img {
+  box-shadow: var(--bs-light);
+}
+
+.section-subtitle-intro {
+  display: inline-block;
+}
+
+@media (min-width: 600px) {
+  .intro {
+    display: grid;
+    grid-column-gap: 1em;
+    width: min-content;
+    margin: 0 auto;
+    grid-template-areas:
+      "img title"
+      "img subtitle";
+    grid-template-columns: min-content max-content;
+  }
+
+  .intro-img {
+    grid-area: img;
+    min-width: 250px;
+    position: relative;
+    z-index: 2;
+  }
+
+  .section-subtitle-intro {
+    align-self: start;
+    grid-column: -1/1;
+    grid-row: 2;
+    text-align: right;
+    position: relative;
+    left: -1.5em;
+    width: calc(100% + 1.5em);
+  }
+}
+
+/* my services */
+
+.my-services {
+  background-color: var(--clr-dark);
+  background-image: url(./brown-book-page-1112048.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  /* background-blend-mode: multiply; */
+  color: var(--clr-light);
+  text-align: center;
+}
+
+.section-title-services {
+  color: var(--clr-accent);
+  position: relative;
+}
+.section-title-services::after {
+  content: "";
+  display: block;
+  width: 2em;
+  height: 1px;
+  margin: 0.5em auto 1em;
+  background-color: var(--clr-light);
+  opacity: 0.25;
+}
+.services {
+  margin-bottom: 4em;
+}
+.service {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+@media (min-width: 800px) {
+  .services {
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1000px;
+  }
+  .service + .service {
+    margin-left: 2em;
+  }
+}
+
+/* about me */
+.about-me {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.about-me-img {
+  box-shadow: var(--bs-light);
+  height: 280px;
+}
+@media (min-width: 600px) {
+  .about-me {
+    display: grid;
+    grid-template-columns: 1fr 200px;
+    grid-template-areas:
+      "title img"
+      "subtitle img"
+      "text img";
+    grid-column-gap: 1.5em;
+  }
+
+  .section-title-about {
+    grid-area: title;
+  }
+  .section-subtitle-about {
+    /* grid-area: subtitle; */
+    margin-top: 1em;
+    grid-column: 1/-1;
+    grid-row: 2;
+    position: relative;
+    left: -1em;
+    width: calc(100% + 2em);
+    padding-left: 1em;
+    /* padding-right: calc(100% + 4em); */
+    z-index: -2;
+  }
+  .about-me-img {
+    grid-area: img;
+  }
+}
+
+/* my work */
+.my-work {
+  background-color: rgb(59, 78, 78);
+  background-image: url(./from-above-of-ethnic-student-examining-location-of-3825558.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-blend-mode: multiply;
+  color: var(--clr-light);
+  text-align: center;
+}
+
+.section-title-mywork {
+  color: var(--clr-accent);
+  position: relative;
+}
+.section-subtitle-mywork {
+  font-weight: var(--fw-bold);
+  margin-top: 0;
+  margin-bottom: 1.5em;
+}
+
+.section-title-mywork::after {
+  content: "";
+  display: block;
+  width: 2em;
+  height: 1px;
+  margin: 0.5em auto 1em;
+  background-color: var(--clr-light);
+  opacity: 0.25;
+}
+
+.projects {
+  margin-bottom: 4em;
+}
+
+.project {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+@media (min-width: 800px) {
+  .projects {
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1400px;
+  }
+  .project + .project {
+    margin-left: 2em;
+  }
+}
+
+/* footer */
+.footer {
+  background: var(--clr-dark);
+  color: var(--clr-accent);
+  text-align: center;
+  padding: 2.5em 0;
+  font-size: 1.5rem;
+}
+.social-list, .footer-link {
+  text-decoration: none;
+  list-style-type: none;
+}
+.social-list{
+  display: flex;
+  justify-content: center;
+  padding: 0;
+  margin: 2em 0 0;
+}
+.social-list-item{
+  margin: 0 1rem;
+}
+.footer a {color: inherit;}
+.footer-link,.social-list-link {
+  transition: all 0.25s ease;
+  font-size: 1.5rem;
+}
+.footer-link:hover,
+.social-list-link:hover {
+  opacity: 0.5;
+}
